@@ -1,0 +1,24 @@
+{
+  "name": "planeswalker",
+  "version": "1.0.0",
+  "description": "planeswalker dice counter app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programmingclass1/planeswalker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/programmingclass1/planeswalker/issues"
+  },
+  "homepage": "https://github.com/programmingclass1/planeswalker#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.5",
+    "sleep": "^5.0.0",
+    "timespan": "^2.3.0"
+  }
+}
