@@ -1,14 +1,9 @@
-
-var diceCounter = {
-    value: 0,
-    labelText: "label",
-    labelColor: "#ffffff",
-    postionX: 0,
-    postionY: 0,
+var diceCounter = function() {
+    var self = this;
+    self.value =  0;
+    self.labelText = "label";
+    self.labelColor = "#ffffff";
+    self.postionX = 0;
+    self.postionY = 0;
 };
-
- module.exports = diceCounter;
-
-
-
-
+module.exports = diceCounter;
