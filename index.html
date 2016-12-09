@@ -1,29 +1,50 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-            
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-        <script type="text/javascript" src="index.js"></script>
-        
-    </head>
-    <body>
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-sm-12">
-                  <h3>Planeswalker</h3>
-                </div>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+
+    <!--used for drag drop-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.7/interact.min.js"></script>
+
+    <script type="text/javascript" src="diceCounter.js"></script>
+    <script type="text/javascript" src="gameField.js"></script>
+    <script type="text/javascript" src="gameFieldController.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Planeswalker <small><input type="button" value="add new dice counter" onclick="javascript: addNewDiceClick();" /></small></h3>
             </div>
-            
-            <div class="row">
-                <div class="col-sm-12">
-                  <textarea name="" style="height: 200px; width: 600px;"></textarea>
-                </div>
-            </div>
-            
         </div>
-    </body>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="gameFieldDiv" style="height: 600px; background-color: #eeeeee;" data-bind="foreach: diceCounters">
+                    <div class="draggable" style="position: absolute; top: 20; left: 30; height: 190px; width: 120px; background-color: #ffffff; border: solid 1px #000000;">
+                        <div style="height: 30px; background-color: #cccccc; cursor: move;"></div>
+                        <input type="text" style="height: 30px; width: 100%; padding: 4px;" data-bind="value: labelText" />
+                        <input type="text" style="height: 94px; width: 100%; font-size: 48px; text-align: center;" data-bind="value: value" />
+                        <div>
+                            <button type="button" class="btn btn-default" style="width: 50%;" data-bind="click: increaseValue">+</button><button type="button" class="btn btn-default" style="width: 50%;" data-bind="click: decreaseValue">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
 </html>
