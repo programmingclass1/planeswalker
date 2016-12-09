@@ -1,7 +1,7 @@
 var readline = require("readline-sync");
-var timespan = require('timespan');
-var diceCounter = require('./diceCounter.js');
-var gameField = require("./gameField.js");
+var timespan = require ('timespan');
+var diceCounter = require ('./diceCounter.js');
+var gameField = require ("./gameField.js");
 var gameFieldController = require("./gameFieldController.js");
 
 var gf = new gameField();
@@ -14,11 +14,11 @@ console.log(gf.fieldId);
 
 var numberOfDice = readline.question("How many players? ");
 
-for (var i = 0; i < numberOfDice; i++) {
+for(var i = 0; i<numberOfDice; i++) {
     var dc = new diceCounter();
-    dc.labelText = "player " + (i + 1);
+    dc.labelText = "player " + (i+1);
     dc.value = 20;
-
+    
     gf.diceCounters.push(dc);
 }
 
@@ -61,3 +61,4 @@ while (true) {
     
 }
 */
+
