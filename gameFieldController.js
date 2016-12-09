@@ -3,9 +3,11 @@ var gameFieldController = function() {
     
     self.printDiceSummary = function(diceCounters) {
         
-        // todo print diceCounter values
-        
-        console.log("something...");
+        diceCounters.forEach(function(dc) {
+            console.log("labelText: " + dc.labelText);
+            console.log("labelColor: " + dc.labelColor);
+            console.log("value: " + dc.value);
+        });
     };
 };
 module.exports = gameFieldController;
